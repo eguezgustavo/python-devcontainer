@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ${HOME}/.ssh:/home/developer/.ssh:ro
+      - ../:/workspace
+    env_file:
+      - .env
